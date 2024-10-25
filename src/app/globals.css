@@ -17,3 +17,59 @@
 .react-calendar__navigation__label__labelText{
     font-weight: 800;
 }
+
+.rbc-btn-group:first-child{
+    display: none !important
+}
+
+.rbc-toolbar-label{
+    text-align: right !important;
+    padding: 0px 20px !important;
+}
+
+.rbc-btn-group:last-child{
+    font-size: 13px;
+}
+
+.rbc-btn-group:last-child button{
+    border: none !important;
+    background-color: #f1f0ff !important;
+    margin-left: 2px !important;
+}
+
+.rbc-toolbar button.rbc-active{
+    background-color: #dbdafe !important;
+    box-shadow: none !important;
+}
+
+.rbc-time-view{
+    border-color: #eee !important;
+}
+
+.rbc-time-head{
+    display: none !important;
+}
+
+.rbc-time-content{
+    border: none !important;
+}
+
+.rbc-time-gutter.rbc-time-colum{
+    font-size: 12px !important;
+}
+
+.rbc-time-gutter.rbc-time-colum .rbc-timeslot-group{
+    padding: 0px 20px !important;
+}
+
+.rbc-timeslot-group{
+    background-color: #f7fdff !important;
+}
+
+.rbc-day-slot{
+    font-size: 14px !important;
+}
+
+.rbc-event{
+    background-color: red !important;
+}
