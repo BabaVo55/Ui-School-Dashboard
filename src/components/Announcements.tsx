@@ -6,7 +6,7 @@ const data = [
       title: 'Lorem ipsum dolor',
       time: "12:00 PM - 2:00 PM",
       description: 'Lorem ipsum dolor',
-      color: 'ethemBlueLight',
+      color: 'ethemBlue',
     },
     {
       id: 2, 
@@ -32,7 +32,7 @@ export default function Announcements() {
             <span className='text-xs text-gray-400'>View all</span>
         </div>
         <div className="flex flex-col gap-4 mt-4">
-          <div className='bg-ethemSkyLight rounded-md p-4'>
+          <div className='bg-ethemGreenLight rounded-md p-4'>
             <div className='flex items-center justify-between'>
               <h2 className='font-medium'>Here is some text for reference</h2>
               <span className='text-xs text-gray-400 bg-white rounded-md px-1 py-1 mt-1'>2025-01-01</span>

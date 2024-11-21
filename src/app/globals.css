@@ -54,11 +54,11 @@
     border: none !important;
 }
 
-.rbc-time-gutter.rbc-time-colum{
+.rbc-time-gutter.rbc-time-column{
     font-size: 12px !important;
 }
 
-.rbc-time-gutter.rbc-time-colum .rbc-timeslot-group{
+.rbc-time-gutter.rbc-time-column .rbc-timeslot-group{
     padding: 0px 20px !important;
 }
 
@@ -71,5 +71,64 @@
 }
 
 .rbc-event{
-    background-color: red !important;
+    border: none !important;
+    color: black !important;
+    padding: 10px !important;
+    margin: 10px !important;
+    width: 99%;
+}
+
+.rbc-event:nth-child{
+    background-color: red;
+}
+
+.rbc-event:nth-child(1){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(2){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(3){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(4){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(5){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(6){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(7){
+    background-color: #e2f8ff;
+}
+.rbc-event:nth-child(8){
+    background-color: #e2f8ff;
+}
+
+.rbc-event-label{
+    color: gray !important;
+    margin-bottom: 5px;
+}
+
+.button1:hover {
+    animation:  bubble 0.2s linear forwards;
+}
+.button2:hover {
+    animation:  bubble 0.2s linear forwards;
+    
+}
+.button3:hover {
+    animation:  bubble 0.2s linear forwards;
+
+}
+
+@keyframes bubble {
+    from {
+        height: 5px
+    } to {
+        height: 32px
+    }
+
 }

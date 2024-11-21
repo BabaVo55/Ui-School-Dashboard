@@ -133,6 +133,7 @@ export const studentsData = [
     email: "john@doe.com",
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      
     phone: "1234567890",
     grade: 5,
     class: "1B",
