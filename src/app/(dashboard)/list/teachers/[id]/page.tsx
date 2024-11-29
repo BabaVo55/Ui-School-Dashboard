@@ -1,4 +1,7 @@
+import Announcements from '@/components/Announcements'
+import BigCalendar from '@/components/BigCalender'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function SingleTeacherPage() {
@@ -44,28 +47,28 @@ export default function SingleTeacherPage() {
                 {/* SMALL CARDS */}
                 <div className='flex-1 flex gap-4 justify-between flex-wrap'>
                     {/* Cards */}
-                    <div className='bg-white p-4 rounded-md flex gap-4 w-full h-30 md:w-[45%] lg:w-[45%] xl:w-full '>
+                    <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[45%] lg:w-[45%] xl:w-full 2xl:w-full'>
                         <Image src="/singleAttendance.png" width={24} height={24} className='w-6 h-6' alt=""  />
                         <div className=''>
                             <h1 className='text-xl font-semibold'>79%</h1>
                             <span className='text-sm text-gray-400'>Attendance</span>
                         </div>
                     </div>
-                    <div className='bg-white p-4 rounded-md flex gap-4 w-full h-30 md:w-[45%] lg:w-[45%] xl:w-full '>
+                    <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[45%] lg:w-[45%] xl:w-full 2xl:w-full'>
                         <Image src="/singleBranch.png" width={24} height={24} className='w-6 h-6' alt=""  />
                         <div className=''>
                             <h1 className='text-xl font-semibold'>22</h1>
                             <span className='text-sm text-gray-400'>Branches</span>
                         </div>
                     </div>
-                    <div className='bg-white p-4 rounded-md flex gap-4 w-full h-30 md:w-[45%] lg:w-[45%] xl:w-full '>
+                    <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[45%] lg:w-[45%] xl:w-full 2xl:w-full'>
                         <Image src="/singleLesson.png" width={24} height={24} className='w-6 h-6' alt=""  />
                         <div className=''>
                             <h1 className='text-xl font-semibold'>3</h1>
                             <span className='text-sm text-gray-400'>Lesson</span>
                         </div>
                     </div>
-                    <div className='bg-white p-4 rounded-md flex gap-4 w-full h-30 md:w-[45%] lg:w-[45%] xl:w-full  '>
+                    <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[45%] lg:w-[45%] xl:w-full 2xl:w-full'>
                         <Image src="/singleClass.png" width={24} height={24} className='w-6 h-6' alt=""  />
                         <div className=''>
                             <h1 className='text-xl font-semibold'>8</h1>
@@ -75,10 +78,26 @@ export default function SingleTeacherPage() {
                 </div>
             </div>
             {/* Bottom */}
-            <div className="">Schedule</div>
+            <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
+                <h1>Teacher&apos;s Schedule</h1>
+                <BigCalendar />
+            </div>
         </div>
         {/* Right */}
-        <div className="w-full xl:w-1/3">r</div>
+        <div className="w-full xl:w-1/3 flex flex-col gap-4">
+            <div className="bg-white p-4 rounded-md shadow-md">
+                <h1 className='text-xl font-semibold'>Shortcuts</h1>
+                <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+                    <Link className='p-3 border rounded-md bg-ethemGreenLight' href="/">Teacher&apos;s Classes</Link>
+                    <Link className='p-3 border rounded-md bg-ethemBlueLight' href="/">Teacher&apos;s Students</Link>
+                    <Link className='p-3 border rounded-md bg-ethemPurpleLight' href="/">Teacher&apos;s Lessons</Link>
+                    <Link className='p-3 border rounded-md bg-ethemYellowLight' href="/">Teacher&apos;s Exams</Link>
+                    <Link className='p-3 border rounded-md bg-ethemPinkLight' href="/">Teacher&apos;s Assignments</Link>
+                </div>
+            </div>
+            
+            <Announcements />
+        </div>
     </div>
   )
 }
