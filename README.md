@@ -1,4 +1,4 @@
-# Lama Dev School Management Dashboard
+# Ethem Dev School Management Dashboard
 
 ## Getting Started
 
