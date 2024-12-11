@@ -114,15 +114,20 @@
 
 .button1:hover {
     animation:  bubble 0.2s linear forwards;
+    position: relative;
 }
-.button2:hover {
-    animation:  bubble 0.2s linear forwards;
-    
-}
-.button3:hover {
-    animation:  bubble 0.2s linear forwards;
 
+.button1::before, 
+.button1::after{
+    content: '';
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: solid 1px black;
 }
+
+
 
 @keyframes bubble {
     from {
@@ -130,5 +135,4 @@
     } to {
         height: 32px
     }
-
 }

@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import React from 'react'
 
-export default function FormModal({table, type,data,id}: {
+export default function FormModal({table, type, data, id, classOn}: {
     table:
         | "teacher" 
         | "student" 
         | "parent" 
         | "subject" 
-        | "class" 
+        | "classes" 
         | "lesson" 
         | "exam" 
         | "assignment" 
@@ -20,14 +20,22 @@ export default function FormModal({table, type,data,id}: {
     type: "create" | "update" | "delete";
     data?: any;
     id?: number; 
+    classOn?: boolean;
 })  {
 
-  const size = type === "create" ? 'w-8 h-8' : 'w-7 h-7';
-  const bgColor = type === "create" ? 'bg-ethemYellow' : type=== 'update' ? 'bg-ethemSky' : 'bg-ethemPurple';
+  const size = type === "create" ? 'w-8' : 'w-7';
+  const bgColor = 
+    type === "create" 
+    ? 'bg-yellow-400' 
+    : type === 'update' 
+    ? 'bg-ethemSky' 
+    : 'bg-ethemPurple';
+
+  const activate = classOn ? 'button1' : 'h-7'
   return (
     <>
-        <button className={`${size} flex items-center justify-center rounded-full ${bgColor}`} onClick={} >
-            <Image src="" alt="" width={} height={} />
+        <button className={`${size} ${activate} ${bgColor} flex items-center justify-center rounded-full `} >
+            <Image src={`/${type}.png`} alt="" width={16} height={16} />
         </button>
     </>
   )
