@@ -83,7 +83,7 @@ export default function TeacherList() {
       <td className=''>
         <div className="flex items-center gap-2">
           <Link href={`/liar/teacher/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemSky" >
+            <button className="button1 w-7 h-7 flex items-center justify-center rounded-full bg-ethemSky" >
               <Image src="/view.png" alt="" width={16} height={16} />
             </button>
           </Link>
