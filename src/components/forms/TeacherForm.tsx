@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import InputField from "../InputField";
 
 const schema = z.object({
     username: z.string().min(3, { message: 'Username bust be minimum 3 chars' })
@@ -18,6 +19,7 @@ const schema = z.object({
     img: z.instanceof(File, {message: "image is required"}),
   });
   
+type Inputs = z.infer<typeof schema>
 
 export default function TeacherForm({
     type, data
@@ -29,14 +31,50 @@ export default function TeacherForm({
         register,
         handleSubmit,
         formState: { errors },
-      } = useForm({
+      } = useForm<Inputs>({
         resolver: zodResolver(schema),
-      });
-  return (
-    <form className="flex flex-col gap-8 ">
-        <h1 className="text-xl font-semibold">Create a new Teacher</h1>
-        <span className="text-xs text-gray-400 font-medium">Authentication Info</span>
-        <span className="text-xs text-gray-400 font-medium">Personal Info</span>
-    </form>
+    });
+
+    const onSubmit = handleSubmit(data=>{
+        console.log(data)
+    })
+
+    return (
+        <form className="flex flex-col gap-8" onSubmit={onSubmit}>
+            <h1 className="text-xl font-semibold">
+                Create a new Teacher
+            </h1>
+            <span className="text-xs text-gray-400 font-medium">
+                Authentication Info
+            </span>
+            <InputField 
+                label="Username" 
+                name="username"
+                defaultValue={data?.username} 
+                register={register} 
+                error={errors.username}
+            />
+            <InputField 
+                label="Email" 
+                name="email"
+                defaultValue={data?.email} 
+                register={register} 
+                error={errors.email}
+            />
+            <InputField 
+                label="Password" 
+                name="password"
+                type='password'
+                defaultValue={data?.password} 
+                register={register} 
+                error={errors.password}
+            />
+            <span className="text-xs text-gray-400 font-medium">
+                Personal Info
+            </span>
+            <button className="bg-blue-400 text-white m-4 p-2 rounded-xl" >
+                {type === 'create' ? 'Submit' : "Update"}
+            </button>
+        </form>
   )
 }
