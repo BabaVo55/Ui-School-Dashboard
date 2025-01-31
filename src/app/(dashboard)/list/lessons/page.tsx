@@ -5,6 +5,7 @@ import TableSearch from '@/components/TableSearch'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import {lessonsData, role} from '@/lib/data';
+import FormModal from '@/components/FormModal'
 
 type Lessons = {
   subject:string;  
@@ -47,11 +48,12 @@ export default function LessonsListPage() {
 
       <td className=''>
         <div className="flex items-center gap-2">
-          <Link href={`/liar/teacher/${item.id}`}>
+          {/* <Link href={`/liar/teacher/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemSky" >
               <Image src="/edit.png" alt="" width={16} height={16} />
             </button>
-          </Link>
+          </Link> */}
+          <FormModal table='lesson' type='update' />
           {role === 'admin' &&(
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemPurpleLight" >
               <Image src="/delete.png" alt="" width={16} height={16} />

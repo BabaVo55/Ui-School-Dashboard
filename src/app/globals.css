@@ -112,6 +112,11 @@
     margin-bottom: 5px;
 }
 
+
+
+
+
+
 .button1:hover {
     animation:  bubble 0.2s linear forwards;
     position: relative;
@@ -136,3 +141,16 @@
         height: 32px
     }
 }
+
+.tester{
+    height: 60px;
+    width:100px;
+    background-color: aquamarine;
+    transition: all 0.9s ease-in;
+    /* transition: height 0.9s ease-in; */
+}
+.tester:hover{
+    height: 100px;
+    width: 150px;  
+}
+

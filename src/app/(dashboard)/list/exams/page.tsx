@@ -5,6 +5,7 @@ import TableSearch from '@/components/TableSearch'
 import Pagination from '@/components/Pagination'
 import Table from '@/components/Table'
 import {examsData, role} from '@/lib/data';
+import FormModal from '@/components/FormModal'
 
 type Exam = {
   id:number
@@ -54,15 +55,19 @@ export default function ExamsListPage() {
 
       <td className=''>
         <div className="flex items-center gap-2">
-          <Link href={`/liar/teacher/${item.id}`}>
+          {/* <Link href={`/liar/teacher/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemSky" >
               <Image src="/edit.png" alt="" width={16} height={16} />
             </button>
-          </Link>
+          </Link> */}
           {role === 'admin' &&(
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemPurpleLight" >
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            <>
+            <FormModal table='exam' type="update" />
+            {/* // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemPurpleLight" >
+            //   <Image src="/delete.png" alt="" width={16} height={16} />
+            // </button> */}
+            <FormModal table="exam" type='delete' classOn={false}/>
+            </>
         )}
         </div>
       </td>
@@ -81,10 +86,10 @@ export default function ExamsListPage() {
             <button className="button1 w-8  flex items-center justify-center rounded-full bg-yellow-400" >
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            <button className="button2 w-8 flex items-center justify-center rounded-full bg-yellow-400" >
+            <button className="button1 w-8 flex items-center justify-center rounded-full bg-yellow-400" >
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="button3 w-8 flex items-center justify-center rounded-full bg-yellow-400" >
+            <button className="button1 w-8 flex items-center justify-center rounded-full bg-yellow-400" >
               <Image src="/plus.png" alt="" width={14} height={14} />
             </button>
           </div>

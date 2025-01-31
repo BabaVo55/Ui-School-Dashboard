@@ -69,11 +69,11 @@ export default function ParentListPage() {
           </Link> */}
           {role === 'admin' &&(
             <>
-            <FormModal table='parent' type='update' data={item} />
-             {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemPurpleLight" >
-                 <Image src="/delete.png" alt="" width={16} height={16} />
-             </button> */}
-            <FormModal table='parent' type='delete' />
+              <FormModal table='parent' type='update' data={item} />
+               {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-ethemPurpleLight" >
+                   <Image src="/delete.png" alt="" width={16} height={16} />
+               </button> */}
+              <FormModal table='parent' type='delete' id={item.id} classOn={false}/>
             </>
         )}
         </div>
