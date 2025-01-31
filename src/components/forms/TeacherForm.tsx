@@ -14,6 +14,7 @@ const schema = z.object({
     lastName: z.string().min(1, {message: 'Your name is much too short'}),
     phone: z.string().min(1, {message: 'Your name is much too short'}),
     address: z.string().min(1, {message: 'Your name is much too short'}),
+    bloodType: z.string().min(1, { message: "Enter your blood type"}),
     birthday: z.date({message: 'birthday is required'}),
     sex: z.enum(['male','female'], {message: "Sex is a must"}),
     img: z.instanceof(File, {message: "image is required"}),
@@ -72,6 +73,38 @@ export default function TeacherForm({
             <span className="text-xs text-gray-400 font-medium">
                 Personal Info
             </span>
+            <InputField 
+                label="Last Name" 
+                name="lastName"
+                defaultValue={data?.lastNme} 
+                register={register} 
+                error={errors.lastName}
+            />
+            <InputField 
+                label="Phone" 
+                name="phone"
+                type='phone'
+                defaultValue={data?.phone} 
+                register={register} 
+                error={errors.phone}
+            />
+            <InputField 
+                label="Address" 
+                name="address"
+                type='address'
+                defaultValue={data?.address} 
+                register={register} 
+                error={errors.address}
+            />
+            <InputField 
+                label="Blood Type" 
+                name="bloodType"
+                type='bloodType'
+                defaultValue={data?.bloodType} 
+                register={register} 
+                error={errors.bloodType}
+            />
+
             <button className="bg-blue-400 text-white m-4 p-2 rounded-xl" >
                 {type === 'create' ? 'Submit' : "Update"}
             </button>
