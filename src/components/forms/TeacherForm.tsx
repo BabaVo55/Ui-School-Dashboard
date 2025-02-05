@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -48,20 +49,22 @@ export default function TeacherForm({
             <span className="text-xs text-gray-400 font-medium">
                 Authentication Info
             </span>
+            <div className="flex flex-wrap justify-between gap-4">
+                
             <InputField 
                 label="Username" 
                 name="username"
                 defaultValue={data?.username} 
                 register={register} 
                 error={errors.username}
-            />
+                />
             <InputField 
                 label="Email" 
                 name="email"
                 defaultValue={data?.email} 
                 register={register} 
                 error={errors.email}
-            />
+                />
             <InputField 
                 label="Password" 
                 name="password"
@@ -69,42 +72,87 @@ export default function TeacherForm({
                 defaultValue={data?.password} 
                 register={register} 
                 error={errors.password}
-            />
+                />
+            </div>
             <span className="text-xs text-gray-400 font-medium">
                 Personal Info
             </span>
+            <div className="flex flex-wrap justify-between gap-4">
+
+            <InputField 
+                label="First Name" 
+                name="firstName"
+                defaultValue={data?.firstName} 
+                register={register} 
+                error={errors.firstName}
+                />
             <InputField 
                 label="Last Name" 
                 name="lastName"
-                defaultValue={data?.lastNme} 
+                defaultValue={data?.lastName} 
                 register={register} 
                 error={errors.lastName}
-            />
+                />
             <InputField 
                 label="Phone" 
                 name="phone"
-                type='phone'
                 defaultValue={data?.phone} 
                 register={register} 
                 error={errors.phone}
-            />
+                />
             <InputField 
                 label="Address" 
                 name="address"
-                type='address'
                 defaultValue={data?.address} 
                 register={register} 
                 error={errors.address}
-            />
+                />
             <InputField 
                 label="Blood Type" 
                 name="bloodType"
-                type='bloodType'
                 defaultValue={data?.bloodType} 
                 register={register} 
                 error={errors.bloodType}
-            />
-
+                />
+            <InputField 
+                label="Birthday" 
+                name="birthday"
+                defaultValue={data?.birthday} 
+                register={register} 
+                error={errors.birthday}
+                type='date'
+                
+                />
+            </div>
+            <div className="flex flex-col gap-2 w-full  md:w-1/4 ">
+                <label className="text-xs text-gray-500">
+                    Sex
+                </label>
+                <select className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full" {...register("sex")} defaultValue={data?.sex}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                {errors.sex?.message && (
+                    <p className="text-xs text-red-600">
+                        {errors.sex.message.toString()}
+                    </p>
+                )}
+            </div>
+            <div className="flex flex-col gap-2 w-full  md:w-1/4 ">
+                <label className="text-xs text-gray-500 flex items-center gap-3 cursor-pointer">
+                    <Image src="/upload.png" width={28} height={28} alt=""></Image>
+                    <span className="">Upload a Photo</span>
+                </label>
+                <select className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full" {...register("sex")} defaultValue={data?.sex}>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                {errors.sex?.message && (
+                    <p className="text-xs text-red-600">
+                        {errors.sex.message.toString()}
+                    </p>
+                )}
+            </div>
             <button className="bg-blue-400 text-white m-4 p-2 rounded-xl" >
                 {type === 'create' ? 'Submit' : "Update"}
             </button>
