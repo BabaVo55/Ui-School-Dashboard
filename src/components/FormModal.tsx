@@ -3,10 +3,12 @@
 import Image from 'next/image';
 import React, {useState} from 'react'
 import TeacherForm from './forms/TeacherForm';
+import StudentForm from './forms/StudentForm copy';
 
 const forms:{[key:string]:(type:'create' | 'update', data?:any) => JSX.Element;
 }={
   teacher:  (type, data) => <TeacherForm type={type} data={data} />
+  student:  (type, data) => <StudentForm type={type} data={data} />
 }
 
 export default function FormModal({table, type, data, id, classOn}: {
@@ -49,10 +51,11 @@ export default function FormModal({table, type, data, id, classOn}: {
         <button className='bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center'>Delete</button>
       </form>
 
-    ) :( 
-      <TeacherForm type='update' data={data} />
+    ) : type === 'create' || type === 'update' ? ( 
+      // <TeacherForm type='update' data={data} />
+      forms[table](type,data)
 
-    )
+    ) : "Form not found!"
   }
 
 
