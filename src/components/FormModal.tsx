@@ -4,6 +4,11 @@ import Image from 'next/image';
 import React, {useState} from 'react'
 import TeacherForm from './forms/TeacherForm';
 
+const forms:{[key:string]:(type:'create' | 'update', data?:any) => JSX.Element;
+}={
+  teacher:  (type, data) => <TeacherForm type={type} data={data} />
+}
+
 export default function FormModal({table, type, data, id, classOn}: {
     table:
         | "teacher" 
