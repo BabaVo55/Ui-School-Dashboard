@@ -23,9 +23,26 @@ export default function SingleTeacherPage() {
                             className="w-36 h-36 rounded-full object-cover" />
                     </div>
                     <div className="w-2/3 flex flex-col justify-between gap-4">
-                    <div className="flex items-center gao-4"></div>
-                        <h1 className="text-xl font-semibold">Andy Doe</h1>
-                        {/* <FormModal table='teacher' type='update' data={} /> */}
+                        <div className="flex items-center gap-4">
+                            <h1 className="text-xl font-semibold">Andy Doe</h1>
+    
+                            <FormModal table='teacher' type='update' data={
+                                {
+                                    id:1,
+                                    username:'teacher',
+                                    email: 'blahblah@gmail.com',
+                                    password: 'password',
+                                    firstName: 'Dean',
+                                    lastName: 'Guerrero',
+                                    phone: '+1 23 456 789',
+                                    address: ' 15 avon house n16 9sl, London, Uk',
+                                    bloodType: '0+',
+                                    dateOfBirth: '11-02-1994',
+                                    sex: 'mal',
+                                    img: 'https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200'
+                                }
+                            } />
+                        </div>
                         <p className='text-sm text-gray-500'>A little description about the user</p>
                         <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                             <div className='w-full md:w-1/3 md:mr-6 lg:w-full 2xl:w-1/3 flex items-center gap-2'>
