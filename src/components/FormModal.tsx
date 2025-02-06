@@ -45,7 +45,7 @@ export default function FormModal({table, type, data, id, classOn}: {
       </form>
 
     ) :( 
-      <TeacherForm type='create' />
+      <TeacherForm type='update' data={data} />
 
     )
   }

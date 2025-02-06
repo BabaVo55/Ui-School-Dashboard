@@ -123,8 +123,7 @@ export default function TeacherForm({
                 type='date'
                 
                 />
-            </div>
-            <div className="flex flex-col gap-2 w-full  md:w-1/4 ">
+            <div className="flex flex-col gap-2 w-full  md:w-1/4">
                 <label className="text-xs text-gray-500">
                     Sex
                 </label>
@@ -138,21 +137,20 @@ export default function TeacherForm({
                     </p>
                 )}
             </div>
-            <div className="flex flex-col gap-2 w-full  md:w-1/4 ">
-                <label className="text-xs text-gray-500 flex items-center gap-3 cursor-pointer">
+            <div className="flex flex-col gap-2 w-full  md:w-1/4 justify-center">
+                <label className="text-xs text-gray-500 flex items-center gap-3 cursor-pointer" htmlFor="img">
                     <Image src="/upload.png" width={28} height={28} alt=""></Image>
                     <span className="">Upload a Photo</span>
                 </label>
-                <select className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full" {...register("sex")} defaultValue={data?.sex}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-                {errors.sex?.message && (
+                <input type="file" id="img"{...register("img")} className="hidden" />
+                {errors.img?.message && (
                     <p className="text-xs text-red-600">
-                        {errors.sex.message.toString()}
+                        {errors.img.message.toString()}
                     </p>
                 )}
             </div>
+            </div>
+
             <button className="bg-blue-400 text-white m-4 p-2 rounded-xl" >
                 {type === 'create' ? 'Submit' : "Update"}
             </button>
